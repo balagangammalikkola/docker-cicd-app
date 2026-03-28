@@ -1,22 +1,20 @@
 name: Docker CI/CD
 
 on:
-push:
-branches: [ "main" ]
+  push:
+    branches: [ "main" ]
 
 jobs:
-docker:
-runs-on: ubuntu-latest
+  docker:
+    runs-on: ubuntu-latest
 
-"""
-steps:
-  - name: Checkout code
-    uses: actions/checkout@v3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-  - name: Build Docker image
-    run: docker build -t myapp .
+      - name: Build Docker image
+        run: docker build -t myapp .
 
-  - name: Run Docker container
-    run: docker run myapp
-"""
+      - name: Run Docker container
+        run: docker run myapp
 
